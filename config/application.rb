@@ -34,5 +34,6 @@ module MockMovieApi
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
+    ActiveModelSerializers.config.adapter = :json_api
   end
 end
