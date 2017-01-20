@@ -1,24 +1,47 @@
-# README
+# Simple Rails Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is meant to test the functionality of the ActiveModel Adapter and Serializer `jsonapi.org`
+integration / capability. Right now, a simple sqlite database is checked into the project with
+several staged records.
 
-Things you may want to cover:
 
-* Ruby version
+## To run:
 
-* System dependencies
+Install ruby:
 
-* Configuration
+```
+brew install rbenv ruby-build
 
-* Database creation
+# Add rbenv to bash so that it loads every time you open a terminal
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+source ~/.bash_profile
+```
 
-* Database initialization
+# Install Ruby
+```
+rbenv install 2.4.0
+rbenv global 2.4.0
+ruby -v  # should output '2.4.0'
+```
 
-* How to run the test suite
+Install Rails 5
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+gem install rails -v 5.0.1
+rbenv rehash  # rehash so ruby can see rails executable
+```
 
-* Deployment instructions
+Make sure sqlite is installed
+```
+brew install sqlite3
+```
 
-* ...
+Install required gems
+```
+bundle install
+```
+
+Run the server
+```
+rails server
+```
