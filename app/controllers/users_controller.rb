@@ -4,13 +4,9 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-    render json: @users, include: requeset.query_parameters['include']
+    render json: @users, include: request.query_parameters['include']
   end
 
-  # GET /users/1
-  def show
-    render json: @user, include: request.query_parameters['include']
-  end
 
   # POST /users
   def create
@@ -43,6 +39,7 @@ class UsersController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
+    # there is a package for strong/strict parameters. may be better to use that.
     def user_params
       params.require(:user).permit(:name, :email)
     end
